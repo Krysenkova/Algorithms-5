@@ -1,6 +1,6 @@
 package Algorithmen.comparator;
 
-import Algorithmen.Student;
+import Algorithmen.data.Student;
 
 public class MatrNumberComparator implements Comparator<Student> {
     @Override

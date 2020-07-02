@@ -3,12 +3,10 @@
  */
 package Algorithmen.main;
 
-import Algorithmen.Student;
+import Algorithmen.data.Student;
 import Algorithmen.comparator.Comparator;
 import Algorithmen.hash.Hash;
 import Algorithmen.menu.Menu;
-import Algorithmen.probing.DoubleHashing;
-import Algorithmen.probing.LinearProbing;
 import Algorithmen.probing.QuadraticProbing;
 import Algorithmen.sort.Sortable;
 
@@ -23,22 +21,25 @@ public class App {
         students[5] = new Student("Lestrade", "Greg", 6, 4527);
         return students;
     }
+
     public static void print(Student[] students) {
-        for (int i = 0; i < students.length; i++){
+        for (int i = 0; i < students.length; i++) {
             System.out.println((i + 1) + ". " + students[i]);
         }
     }
 
-    public static void sortAndPrint(Student[] students, Sortable<Student> algorithm, Comparator<Student> comparator){
+    public static void sortAndPrint(Student[] students, Sortable<Student> algorithm, Comparator<Student> comparator) {
         System.out.println("Sort algorithm: " + algorithm.getClass().getSimpleName() + "  Comparator: " + comparator.getClass().getSimpleName());
         algorithm.sort(students, comparator);
         print(students);
         System.out.println();
     }
 
-    public static void main(String[] args) throws Exception {
-        int m = 14;
+    public static void main(String[] args) {
+        int m = 8;
         ADSHashTable table = new ADSHashTable(m, new Hash(m), new QuadraticProbing());
+        System.out.println();
+        System.out.println("Console-Application: Exercise-5             <Ekaterina><Krysenkova><573734>");
         Menu.choice(table);
     }
 }

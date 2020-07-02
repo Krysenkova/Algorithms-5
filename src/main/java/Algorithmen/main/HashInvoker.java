@@ -4,6 +4,10 @@ public class HashInvoker {
     private static final String sMsgRemoveKey = "Remove key '%d' from the hash table.";
     private static final String sMsgSearchForKey = "Search for key '%d' in the hash table.";
     private static final String sMsgSearchKeyFound = "Found key '%d' in hash table.";
+    private static final String sMsgGetKeyFound = "Got key '%d' in hash table";
+    private static final String sMsgIsCleared = "The hash table is cleared";
+    private static final String sMsgIndexIsOutOfBounds = "Index is out of Bounds";
+    private static final String sMsgNoElement = "There is no element at this index";
 
     static public void insert(ADSHashTable table, int key) {
         try {
@@ -38,10 +42,19 @@ public class HashInvoker {
         System.out.flush();
     }
 
-    static public void clear(ADSHashTable table){
+    static public void getValue(ADSHashTable table, int idx) {
+        HashArray array = table.getHashArray();
+        if (idx > array.getSize() || idx < 0) {
+            print(sMsgIndexIsOutOfBounds);
+        } else if (array.isFree(idx) || array.isMarkedAsDeleted(idx)) {
+            print(sMsgNoElement);
+        } else
+            print(String.format(sMsgGetKeyFound, array.get(idx)));
+    }
+
+    static public void clear(ADSHashTable table) {
         table.clear();
-
-
+        print(sMsgIsCleared);
     }
 
     static private void flush(Exception e) {

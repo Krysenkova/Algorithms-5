@@ -1,7 +1,7 @@
 package Algorithmen.hash;
 
 public class Hash implements IHash {
-    // ist m aus den Folien
+
     private int size;
 
     public Hash(int size) {
@@ -18,6 +18,5 @@ public class Hash implements IHash {
     public String toString() {
         return "Hash";
     }
-
 }
 

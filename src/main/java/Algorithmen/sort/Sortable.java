@@ -1,6 +1,5 @@
 package Algorithmen.sort;
 
-import Algorithmen.Student;
 import Algorithmen.comparator.Comparator;
 
 

@@ -1,6 +1,5 @@
 package Algorithmen.sort;
 
-import Algorithmen.Student;
 import Algorithmen.comparator.Comparator;
 
 public class Quicksort<T> extends Swapper<T> implements Sortable<T> {
@@ -18,13 +17,12 @@ public class Quicksort<T> extends Swapper<T> implements Sortable<T> {
         if (partition + 1 < end) {
             quickSort(students, partition + 1, end, comparator);
         }
-
     }
 
     public int partition(T[] students, int start, int end, Comparator<T> comparator) {
-       T pivot = students[end];
+        T pivot = students[end];
         for (int i = start; i < end; i++) {
-            if (comparator.compare(students[i],pivot) < 0) {
+            if (comparator.compare(students[i], pivot) < 0) {
                 swap(students, start, i);
                 start++;
             }

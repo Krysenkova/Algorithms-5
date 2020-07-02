@@ -6,8 +6,6 @@ import Algorithmen.main.HashInvoker;
 public class Menu {
     public static void mainMenu() {
         System.out.println();
-        System.out.println("Console-Application: Exercise-5             <Ekaterina><Krysenkova><573734>");
-        System.out.println();
         System.out.println("1.Add a number to hash table");
         System.out.println("2.Get a number from hash table");
         System.out.println("3.Search for a number in hash table");
@@ -17,7 +15,6 @@ public class Menu {
         System.out.println("0.Exit");
         System.out.println();
     }
-
 
     public static void choice(ADSHashTable table) {
         int choice = 1;
@@ -31,7 +28,9 @@ public class Menu {
                     HashInvoker.insert(table, input);
                     break;
                 case 2:
-
+                    input = Console.readIntFromStdin("Please enter an index:");
+                    HashInvoker.getValue(table, input);
+                    break;
                 case 3:
                     input = Console.readIntFromStdin("Please enter a number for searching: ");
                     HashInvoker.search(table, input);
@@ -45,12 +44,11 @@ public class Menu {
                     break;
                 case 6:
                     SortMenu.executeSortMenu();
+                    break;
                 case 0:
                     break;
                 default:
                     System.out.println("Wrong input. Try again!");
-
-
             }
         }
     }

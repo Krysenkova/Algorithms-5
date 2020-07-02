@@ -10,7 +10,6 @@ public class DoubleHashing implements IProbing {
 
     @Override
     public int probe(int key, int j) {
-        // TODO Auto-generated method stub
         return j * (1 + Math.floorMod(key, m2));
     }
 

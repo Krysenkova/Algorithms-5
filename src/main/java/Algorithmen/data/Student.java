@@ -1,4 +1,4 @@
-package Algorithmen;
+package Algorithmen.data;
 
 public class Student {
     String name;
@@ -11,18 +11,6 @@ public class Student {
         this.prename = prename;
         this.course = course;
         this.matriculationNumber = matriculationNumber;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getPrename() {
-        return prename;
-    }
-
-    public int getCourse() {
-        return course;
     }
 
     public int getMatriculationNumber() {
@@ -38,5 +26,4 @@ public class Student {
                 ", matriculationNumber=" + matriculationNumber +
                 '}';
     }
-
 }

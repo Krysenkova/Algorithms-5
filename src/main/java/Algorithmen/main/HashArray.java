@@ -3,7 +3,7 @@ package Algorithmen.main;
 public class HashArray {
     private int size;
 
-    private class Item {
+    private static class Item {
         public Item(int key) {
             super();
             this.key = key;
@@ -35,10 +35,6 @@ public class HashArray {
         this.hashArray[idx].key = Integer.MIN_VALUE;
     }
 
-    public boolean isInsertable(int idx) {
-        return this.hashArray[idx] == null;
-    }
-
     public boolean isFree(int idx) {
         return this.hashArray[idx] == null;
     }
@@ -55,12 +51,16 @@ public class HashArray {
         this.hashArray = new Item[size];
     }
 
+    public int getSize() {
+        return this.hashArray.length;
+    }
+
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("[");
-        for(Item item : hashArray) {
-            if (item == null ) {
+        for (Item item : hashArray) {
+            if (item == null) {
                 builder.append("**, ");
             } else {
                 builder.append(item.markAsDeleted ? "##, " : item.key + ", ");
